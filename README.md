@@ -29,7 +29,7 @@ We obtain the following plot based on 10244 retained samples:
 ![Rejection sampling example](Example_exp2unif.png?raw=true "1D rejection sampling example")
 
 #### Bivariate example
-To obtain samples From a bivariate uniform distribution given a bivariate normal distribution with parameters <img src="https://rawgit.com/nalcala/Statistics (fetch/svgs/svgs/d5d161c4b8dabfb1cc81a195cb2fb48b.svg?invert_in_darkmode" align=middle width=77.239635pt height=24.56553pt/> and <img src="https://rawgit.com/nalcala/Statistics (fetch/svgs/svgs/91854dd76f96913662b05f2b69fd22c0.svg?invert_in_darkmode" align=middle width=40.00623pt height=21.10812pt/>, you can use the following command:
+To obtain samples From a bivariate uniform distribution given a bivariate normal distribution with parameters, you can use the following command:
 ```
 S2d = mvrnorm(100000,c(-1,1),matrix(c(1,0,0,1),ncol=2))
 Sunif2d = rej_samp(S2d,M=50,g=mvdunif,plot=TRUE,pg=pnorm)
