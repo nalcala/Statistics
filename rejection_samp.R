@@ -33,8 +33,9 @@ rej_samp <- function(S,M=50,g=dunif,gparams=NULL,plot=TRUE,pg=NULL){
       } 
     }
   }
-  
-  return(list(S[retain],retain) )
+  if(dim==1) Sret = S[retain]
+  else       Sret = S[retain,]
+  return(list(Sret,retain) )
 }  
 
 
