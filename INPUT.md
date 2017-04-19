@@ -2,7 +2,7 @@
 Repository with scripts for statistical analyses
 
 ## 1. Rejection Sampling with continuous uni- and multivariate distributions
-The file ***rejection_samp.R*** contains the function *rej_samp* that performs rejection sampling to obtain samples from a target probability distribution *g* given samples from an **unknown probability distribution** $fx$.
+The file ***rejection_samp.R*** contains the function *rej_samp* that performs rejection sampling to obtain samples from a target probability distribution $g(x)$ given samples from an **unknown probability distribution** $f(x)$.
 
 ### Usage
 Function *rej_samp* takes 6 arguments:
@@ -12,6 +12,12 @@ Function *rej_samp* takes 6 arguments:
 - An optional vector containing parameters for *g*, *gparams* (default is NULL)
 - An optional boolean value *plot* indicating if plots of the distributions are required (default is TRUE)
 - An optional cumulative distribution function *pg* (default is NULL); this is required if plot=T in order to truncate the target distribution within the possible range given S
+
+## Algorithm
+- Compute an approximation $\tilde{f}(x)$ of the unknown $f(x)$ for all $x \in [\min(S),\max(S)]$ using kernel density estimation function *kde* from R package *ks* on matrix *S*
+- Simulate $n$ random variables $U~Unif(0,1)$, where $n$ is the number of samples in *S*
+- For $i \in [1,n]$, accept sample $S_i$ if $u < \frac{g(S_i)}{M \tilde{f}(S_i)}$
+
 
 ## Output
 Function *rej_samp* returns a list with 2 elements:

@@ -2,7 +2,7 @@
 Repository with scripts for statistical analyses
 
 ## 1. Rejection Sampling with continuous uni- and multivariate distributions
-The file ***rejection_samp.R*** contains the function *rej_samp* that performs rejection sampling to obtain samples from a target probability distribution *g* given samples from an **unknown probability distribution** <img src="https://rawgit.com/nalcala/Statistics/svgs/svgs/f5ad56b4938b4cbb85139eeb092389c2.svg?invert_in_darkmode" align=middle width=19.14726pt height=22.74591pt/>.
+The file ***rejection_samp.R*** contains the function *rej_samp* that performs rejection sampling to obtain samples from a target probability distribution <img src="https://rawgit.com/nalcala/Statistics/svgs/svgs/ffcbbb391bc04da2d07f7aef493d3e2a.svg?invert_in_darkmode" align=middle width=30.4986pt height=24.56553pt/> given samples from an **unknown probability distribution** <img src="https://rawgit.com/nalcala/Statistics/svgs/svgs/7997339883ac20f551e7f35efff0a2b9.svg?invert_in_darkmode" align=middle width=31.88493pt height=24.56553pt/>.
 
 ### Usage
 Function *rej_samp* takes 6 arguments:
@@ -12,6 +12,12 @@ Function *rej_samp* takes 6 arguments:
 - An optional vector containing parameters for *g*, *gparams* (default is NULL)
 - An optional boolean value *plot* indicating if plots of the distributions are required (default is TRUE)
 - An optional cumulative distribution function *pg* (default is NULL); this is required if plot=T in order to truncate the target distribution within the possible range given S
+
+## Algorithm
+- Compute an approximation <img src="https://rawgit.com/nalcala/Statistics/svgs/svgs/1be415bedf77d1dc80452b7e1a1146b7.svg?invert_in_darkmode" align=middle width=31.91496pt height=30.55107pt/> of the unknown <img src="https://rawgit.com/nalcala/Statistics/svgs/svgs/7997339883ac20f551e7f35efff0a2b9.svg?invert_in_darkmode" align=middle width=31.88493pt height=24.56553pt/> for all <img src="https://rawgit.com/nalcala/Statistics/svgs/svgs/84b486d65e13978df1d1b6c83dcf8a5f.svg?invert_in_darkmode" align=middle width=151.243125pt height=24.56553pt/> using kernel density estimation function *kde* from R package *ks* on matrix *S*
+- Simulate <img src="https://rawgit.com/nalcala/Statistics/svgs/svgs/55a049b8f161ae7cfeb0197d75aff967.svg?invert_in_darkmode" align=middle width=9.83004pt height=14.10255pt/> random variables <img src="https://rawgit.com/nalcala/Statistics/svgs/svgs/098e1fc607927cb1caca96b143577bb4.svg?invert_in_darkmode" align=middle width=93.09036pt height=24.56553pt/>, where <img src="https://rawgit.com/nalcala/Statistics/svgs/svgs/55a049b8f161ae7cfeb0197d75aff967.svg?invert_in_darkmode" align=middle width=9.83004pt height=14.10255pt/> is the number of samples in *S*
+- For <img src="https://rawgit.com/nalcala/Statistics/svgs/svgs/5059c0687b56e424dbd5e2100470ae5c.svg?invert_in_darkmode" align=middle width=60.09795pt height=24.56553pt/>, accept sample <img src="https://rawgit.com/nalcala/Statistics/svgs/svgs/d28140eda2d12e24b434e011b930fa23.svg?invert_in_darkmode" align=middle width=14.67576pt height=22.38192pt/> if <img src="https://rawgit.com/nalcala/Statistics/svgs/svgs/220786d97e0082c8ae481c53d70261f4.svg?invert_in_darkmode" align=middle width=78.24036pt height=33.14091pt/>
+
 
 ## Output
 Function *rej_samp* returns a list with 2 elements:
