@@ -15,8 +15,8 @@ Function *rej_samp* takes 6 arguments:
 
 ## Algorithm
 - Compute an approximation $\tilde{f}(x)$ of the unknown $f(x)$ for all $x \in [\min(S),\max(S)]$ using kernel density estimation function *kde* from R package *ks* on matrix *S*
-- Simulate $n$ random variables $U\sim Unif(0,1)$, where $n$ is the number of samples in *S*
-- For $i \in [1,n]$, accept sample $S_i$ if $u < \frac{g(S_i)}{M \tilde{f}(S_i)}$
+- Simulate $n$ random variables $u_i$ uniformly distributed between 0 and 1, where $n$ is the number of samples in *S*
+- For $i \in [1,n]$, accept sample $S_i$ if $u_i < \frac{g(S_i)}{M \tilde{f}(S_i)}$
 
 
 ## Output
