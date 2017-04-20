@@ -2,7 +2,7 @@
 Repository with scripts for statistical analyses
 
 ## 1. Rejection Sampling with continuous uni- and multivariate distributions
-The file ***rejection_samp.R*** contains the function *rej_samp* that performs rejection sampling *to obtain samples from a target probability distribution* $g(x)$ *given samples from an *unknown probability distribution** $f(x)$.
+The file ***rejection_samp.R*** contains the function *rej_samp* that performs rejection sampling **to obtain samples from a target probability distribution** $g(x)$ **given samples from an *unknown probability distribution*** $f(x)$.
 
 ### Usage
 Function *rej_samp* takes 6 arguments:
