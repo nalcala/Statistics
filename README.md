@@ -2,7 +2,7 @@
 Repository with scripts for statistical analyses
 
 ## 1. Rejection Sampling with continuous uni- and multivariate distributions
-The file ***rejection_samp.R*** contains the function *rej_samp* that performs rejection sampling to obtain samples from a target probability distribution <img src="https://rawgit.com/nalcala/Statistics/svgs/svgs/ffcbbb391bc04da2d07f7aef493d3e2a.svg?invert_in_darkmode" align=middle width=30.4986pt height=24.56553pt/> given samples from an **unknown probability distribution** <img src="https://rawgit.com/nalcala/Statistics/svgs/svgs/7997339883ac20f551e7f35efff0a2b9.svg?invert_in_darkmode" align=middle width=31.88493pt height=24.56553pt/>.
+The file ***rejection_samp.R*** contains the function *rej_samp* that performs rejection sampling *to obtain samples from a target probability distribution* <img src="https://rawgit.com/nalcala/Statistics/svgs/svgs/ffcbbb391bc04da2d07f7aef493d3e2a.svg?invert_in_darkmode" align=middle width=30.4986pt height=24.56553pt/> *given samples from an *unknown probability distribution** <img src="https://rawgit.com/nalcala/Statistics/svgs/svgs/7997339883ac20f551e7f35efff0a2b9.svg?invert_in_darkmode" align=middle width=31.88493pt height=24.56553pt/>.
 
 ### Usage
 Function *rej_samp* takes 6 arguments:
